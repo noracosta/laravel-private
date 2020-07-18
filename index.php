@@ -37,6 +37,12 @@ require __DIR__.'/private/vendor/autoload.php';
 
 $app = require_once __DIR__.'/private/bootstrap/app.php';
 
+$app->bind('path.public', function() {
+
+    return $_SERVER["DOCUMENT_ROOT"];
+    
+});
+
 /*
 |--------------------------------------------------------------------------
 | Run The Application
